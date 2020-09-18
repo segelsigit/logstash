@@ -41,7 +41,7 @@ RUN groupadd --gid 1000 logstash && \
 # Add Logstash itself.
 RUN curl -Lo - {{ url_root }}/{{ tarball }} | \
     tar zxf - -C /usr/share && \
-    mv /usr/share/logstash-{{ elastic_version }}-linux-x86_64 /usr/share/logstash && \
+    mv /usr/share/logstash-{{ elastic_version }} /usr/share/logstash && \
     chown --recursive logstash:logstash /usr/share/logstash/ && \
     chown -R logstash:root /usr/share/logstash && \
     chmod -R g=u /usr/share/logstash && \
