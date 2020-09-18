@@ -140,11 +140,11 @@ namespace "artifact" do
       system("./gradlew copyJdk -Pjdk_bundle_os=#{os_name}")
       case os_name
       when "linux"
-        build_tar('ELASTIC-LICENSE', platform: '-linux-x86-64')
+        build_tar('ELASTIC-LICENSE', platform: '-linux-x86_64')
       when "windows"
-        build_zip('ELASTIC-LICENSE', platform: '-windows-x86-64')
+        build_zip('ELASTIC-LICENSE', platform: '-windows-x86_64')
       when "darwin"
-        build_tar('ELASTIC-LICENSE', platform: '-darwin-x86-64')
+        build_tar('ELASTIC-LICENSE', platform: '-darwin-x86_64')
       end
       system("./gradlew deleteLocalJdk -Pjdk_bundle_os=#{os_name}")
     end
@@ -168,11 +168,11 @@ namespace "artifact" do
       system("./gradlew copyJdk -Pjdk_bundle_os=#{os_name}")
       case os_name
       when "linux"
-        build_tar('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-linux-x86-64')
+        build_tar('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-linux-x86_64')
       when "windows"
-        build_zip('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-windows-x86-64')
+        build_zip('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-windows-x86_64')
       when "darwin"
-        build_tar('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-darwin-x86-64')
+        build_tar('APACHE-LICENSE-2.0', "-oss", oss_excluder, platform: '-darwin-x86_64')
       end
       system("./gradlew deleteLocalJdk -Pjdk_bundle_os=#{os_name}")
     end

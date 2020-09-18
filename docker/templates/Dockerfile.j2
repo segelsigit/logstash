@@ -6,10 +6,10 @@
 {% endif -%}
 
 {% if image_flavor == 'oss' -%}
-  {% set tarball = 'logstash-oss-%s-linux-x86-64.tar.gz' % elastic_version -%}
+  {% set tarball = 'logstash-oss-%s-linux-x86_64.tar.gz' % elastic_version -%}
   {% set license = 'Apache 2.0' -%}
 {% else -%}
-  {% set tarball = 'logstash-%s-linux-x86-64.tar.gz' % elastic_version -%}
+  {% set tarball = 'logstash-%s-linux-x86_64.tar.gz' % elastic_version -%}
   {% set license = 'Elastic License' -%}
 {% endif -%}
 
@@ -41,7 +41,7 @@ RUN groupadd --gid 1000 logstash && \
 # Add Logstash itself.
 RUN curl -Lo - {{ url_root }}/{{ tarball }} | \
     tar zxf - -C /usr/share && \
-    mv /usr/share/logstash-{{ elastic_version }}-linux-x86-64 /usr/share/logstash && \
+    mv /usr/share/logstash-{{ elastic_version }}-linux-x86_64 /usr/share/logstash && \
     chown --recursive logstash:logstash /usr/share/logstash/ && \
     chown -R logstash:root /usr/share/logstash && \
     chmod -R g=u /usr/share/logstash && \
